@@ -7,7 +7,7 @@
 #include <stdio.h>
 #include <signal.h>
 
-void signalController(int signum){		//Funcion para administrar las se馻les de detencion
+void signalController(int signum){		//Funcion para administrar las se帽ales de detencion
 	switch(signum){
 		case SIGUSR1:
 			exit(EXIT_SUCCESS);
@@ -16,22 +16,22 @@ void signalController(int signum){		//Funcion para administrar las se馻les de de
 			exit(EXIT_SUCCESS);
 			break;
 		case SIGTERM:
-			std::cout << "Acci髇 denegada.\n";
+			std::cout << "Acci贸n denegada.\n";
 			break;
 		case SIGPIPE:
-			std::cout << "Acci髇 denegada.\n";
+			std::cout << "Acci贸n denegada.\n";
 			break;
 		case SIGBUS:
-			std::cout << "Acci髇 denegada.\n";
+			std::cout << "Acci贸n denegada.\n";
 			break;
 		case SIGQUIT:
-			std::cout << "Acci髇 denegada.\n";
+			std::cout << "Acci贸n denegada.\n";
 			break;
 		case SIGINT:
-			std::cout << "Acci髇 denegada.\n";
+			std::cout << "Acci贸n denegada.\n";
 			break;
 		case SIGTSTP:
-			std::cout << "Acci髇 denegada.\n";
+			std::cout << "Acci贸n denegada.\n";
 			break;
 		default:
 			break;
@@ -39,7 +39,7 @@ void signalController(int signum){		//Funcion para administrar las se馻les de de
 }
 
 int main(int argc, char** argv){
-	//Registra la se馻l y la funci髇 de administraci髇
+	//Registra la se帽al y la funci贸n de administraci贸n
 	signal(SIGUSR1,signalController);
 	signal(SIGUSR2,signalController);
 	signal(SIGTERM,signalController);
@@ -53,7 +53,7 @@ int main(int argc, char** argv){
 	uint32_t v1 = 0, v2 = 1, n;
 	for (int i = 0; i < 50; i++){
 		if(result > 0){		//Codigo Padre
-			std::this_thread::sleep_for(std::chrono::milliseconds(800));
+			std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 			//Calculo Fibonacci
 			std::cout << "Valor Fibonacci: "<< v1 <<" - PID = "<< getpid() << "\n";
 			n = v1 + v2;
